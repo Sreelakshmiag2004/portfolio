@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic Dark Portfolio Design System
+All colors MUST be HSL. Inspired by deep space with electric accents.
+*/
+
+@layer base {
+  :root {
+    /* Dark cosmic background palette */
+    --background: 231 84% 3%;
+    --foreground: 210 100% 95%;
+
+    /* Card and surface colors */
+    --card: 231 50% 8%;
+    --card-foreground: 210 100% 95%;
+
+    --popover: 231 50% 8%;
+    --popover-foreground: 210 100% 95%;
+
+    /* Electric blue primary */
+    --primary: 220 100% 60%;
+    --primary-foreground: 231 84% 3%;
+    --primary-glow: 220 100% 70%;
+
+    /* Purple secondary */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 231 84% 3%;
+    --secondary-glow: 280 100% 80%;
+
+    /* Muted cosmic colors */
+    --muted: 231 30% 15%;
+    --muted-foreground: 215 25% 70%;
+
+    /* Electric accent */
+    --accent: 180 100% 50%;
+    --accent-foreground: 231 84% 3%;
+    --accent-glow: 180 100% 60%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 100% 95%;
+
+    --border: 231 30% 20%;
+    --input: 231 30% 15%;
+    --ring: 220 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom cosmic variables */
+    --cosmic-purple: 280 100% 70%;
+    --cosmic-blue: 220 100% 60%;
+    --cosmic-cyan: 180 100% 50%;
+    --cosmic-pink: 320 100% 70%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-purple)), hsl(var(--cosmic-blue)));
+    --gradient-electric: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-cyan)));
+    --gradient-aurora: linear-gradient(135deg, hsl(var(--cosmic-pink)), hsl(var(--cosmic-purple)), hsl(var(--cosmic-blue)));
+    
+    /* Shadows and glows */
+    --shadow-cosmic: 0 25px 50px -12px hsl(var(--cosmic-purple) / 0.25);
+    --shadow-electric: 0 25px 50px -12px hsl(var(--cosmic-blue) / 0.25);
+    --glow-primary: 0 0 40px hsl(var(--primary-glow) / 0.6);
+    --glow-secondary: 0 0 40px hsl(var(--secondary-glow) / 0.6);
+    --glow-accent: 0 0 40px hsl(var(--accent-glow) / 0.6);
+    
+    /* Animations */
+    --transition-cosmic: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.3s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Cosmic button variants */
+  .btn-cosmic {
+    @apply relative px-8 py-4 rounded-xl font-semibold text-primary-foreground;
+    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply shadow-[var(--shadow-cosmic)];
+    @apply transition-[var(--transition-cosmic)];
+    @apply hover:scale-105 hover:shadow-[var(--glow-primary)];
+    @apply before:absolute before:inset-0 before:rounded-xl;
+    @apply before:bg-gradient-to-r before:from-primary-glow before:to-secondary-glow;
+    @apply before:opacity-0 before:transition-opacity before:duration-300;
+    @apply hover:before:opacity-20;
+  }
+  
+  .btn-electric {
+    @apply relative px-6 py-3 rounded-lg font-medium;
+    @apply bg-gradient-to-r from-accent to-primary;
+    @apply text-accent-foreground;
+    @apply shadow-[var(--shadow-electric)];
+    @apply transition-[var(--transition-smooth)];
+    @apply hover:scale-105 hover:shadow-[var(--glow-accent)];
+  }
+  
+  .btn-ghost {
+    @apply relative px-6 py-3 rounded-lg font-medium;
+    @apply bg-transparent border-2 border-primary/30;
+    @apply text-foreground;
+    @apply transition-[var(--transition-smooth)];
+    @apply hover:border-primary hover:bg-primary/10;
+    @apply hover:shadow-[var(--glow-primary)];
+  }
+  
+  /* Card variants */
+  .card-cosmic {
+    @apply relative p-6 rounded-2xl;
+    @apply bg-gradient-to-br from-card to-card/80;
+    @apply border border-border/50;
+    @apply shadow-[var(--shadow-cosmic)];
+    @apply backdrop-blur-sm;
+    @apply transition-[var(--transition-cosmic)];
+    @apply hover:scale-[1.02] hover:shadow-[var(--glow-primary)];
+  }
+  
+  .card-glass {
+    @apply relative p-6 rounded-2xl;
+    @apply bg-white/5 backdrop-blur-xl;
+    @apply border border-white/10;
+    @apply shadow-[var(--shadow-electric)];
+    @apply transition-[var(--transition-smooth)];
+  }
+  
+  /* Text effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .text-glow {
+    @apply drop-shadow-[0_0_20px_hsl(var(--primary)/0.6)];
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  /* Unified cosmic glow for skill cards */
+  .cosmic-glow-hover {
+    transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.25),
+      0 0 16px 2px hsl(var(--primary-glow) / 0.25),
+      0 0 32px 4px hsl(var(--secondary-glow) / 0.18),
+      0 0 48px 8px hsl(var(--accent-glow) / 0.12);
+  }
+
+  /* Attractive skill progress bar */
+  .cosmic-skill-bar {
+    position: relative;
+    height: 1.25rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, hsl(var(--card) / 0.7) 0%, hsl(var(--muted) / 0.7) 100%);
+    overflow: hidden;
+    box-shadow: 0 0 12px 0 hsl(var(--primary-glow) / 0.18), 0 2px 8px 0 hsl(var(--secondary-glow) / 0.10);
+  }
+  .cosmic-skill-bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, hsl(var(--primary-glow)), hsl(var(--secondary-glow)), hsl(var(--accent-glow)));
+    box-shadow: 0 0 16px 2px hsl(var(--primary-glow) / 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .cosmic-skill-bar-label {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-shadow: 0 1px 8px hsl(var(--primary-glow) / 0.7);
+    letter-spacing: 0.03em;
+    pointer-events: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--glow-primary); }
+  50% { box-shadow: var(--glow-secondary); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
