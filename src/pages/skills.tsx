@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Download, ExternalLink, Mail, Play, Github, Send, User, MessageSquare, Linkedin, FileText } from 'lucide-react';
+import { Download, ExternalLink, Mail, Play, Github, Send, User, MessageSquare, Linkedin, FileText, MapPin, Phone } from 'lucide-react';
 import { useState, useRef } from 'react';
 import * as THREE from 'three';
 import { ParticlesBackground } from '@/components/ui/particles-background';
@@ -12,13 +12,11 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import pythonLogo from '../assets/python.png';
 import javaLogo from '../assets/java.png';
-import htmlLogo from '../assets/HTML.png';
 import jsLogo from '../assets/Js.png';
 import reactLogo from '../assets/react.png';
 import gitLogo from '../assets/git.png';
 import linuxLogo from '../assets/linux.png';
 import figmaLogo from '../assets/figma.png';
-import aiLogo from '../assets/AI/ML.png';
 
 // Animation variants
 const containerVariants = {
@@ -52,60 +50,68 @@ const sectionVariants = {
   },
 };
 
-// Skills data
+// Skills data (aligned to resume)
 const skillsData = [
   { name: 'Python', level: 90, category: 'Programming', color: '#3776ab' },
   { name: 'Java', level: 85, category: 'Programming', color: '#f89820' },
-  { name: 'C', level: 80, category: 'Programming', color: '#00599c' },
-  { name: 'HTML/CSS', level: 95, category: 'Web', color: '#e34f26' },
-  { name: 'JavaScript', level: 88, category: 'Web', color: '#f7df1e' },
-  { name: 'React', level: 85, category: 'Web', color: '#61dafb' },
-  { name: 'Git', level: 90, category: 'Tools', color: '#f05032' },
-  { name: 'Linux', level: 75, category: 'Tools', color: '#fcc624' },
-  { name: 'Figma', level: 85, category: 'Design', color: '#f24e1e' },
-  { name: 'AI/ML', level: 80, category: 'Advanced', color: '#ff6b6b' },
+  { name: 'TypeScript', level: 82, category: 'Programming', color: '#3178c6' },
+  { name: 'JavaScript (ES6+)', level: 86, category: 'Programming', color: '#f7df1e' },
+  { name: 'React.js', level: 84, category: 'Web & Enterprise', color: '#61dafb' },
+  { name: 'Node.js', level: 78, category: 'Web & Enterprise', color: '#3c873a' },
+  { name: 'Figma (UI/UX Prototyping)', level: 85, category: 'Web & Enterprise', color: '#f24e1e' },
+  { name: 'MySQL', level: 78, category: 'Database', color: '#00758f' },
+  { name: 'MongoDB', level: 76, category: 'Database', color: '#47a248' },
+  { name: 'Git & GitHub', level: 88, category: 'Tools & Platforms', color: '#f05032' },
+  { name: 'Linux Commands', level: 75, category: 'Tools & Platforms', color: '#fcc624' },
+  { name: 'Agile/Scrum', level: 78, category: 'Consulting & Soft Skills', color: '#a855f7' },
 ];
 
-// Projects data
+// Projects data (aligned to resume)
 const projects = [
   {
-    title: "MindMate",
-    subtitle: "Mental Wellness App",
-    description: "Comprehensive mental health platform providing personalized wellness tracking, mood analysis, and therapeutic resources for users.",
-    tech: ["Mobile Dev", "UI/UX", "Psychology", "User Research"],
-    link: "https://tinyurl.com/MindMatePrj",
-    code: "https://github.com/YUVARAJ-2K3/MindMate.git",
-    type: "Mobile App",
-    color: "cosmic-purple"
-  },
-  {
-    title: "Women Safety Analytics",
-    subtitle: "Safety Monitoring Platform",
-    description: "Real-time analytics webpage focused on women's safety metrics, data visualization, and emergency response coordination.",
-    tech: ["Web Dev", "Data Analytics", "Real-time Processing", "Visualization"],
-    link: "https://sreelakshmiag2004.github.io/Stalwart/hotspot.html",
-    code: "https://github.com/Sreelakshmiag2004/Stalwart",
+    title: "Canteen Management",
+    subtitle: "Java-based Canteen Management System",
+    description:
+      "Java-based canteen management system built as an NLC India Limited project, focused on structured web application development with reliable database connectivity for organized canteen-related data.",
+    tech: ["Java", "Web App", "Database Connectivity"],
+    link: "https://github.com/Sreelakshmiag2004/canteen_management",
+    code: "https://github.com/Sreelakshmiag2004/canteen_management",
     type: "Web Application",
-    color: "cosmic-cyan"
+    color: "cosmic-blue",
   },
   {
-    title: "Instagram UI Clone",
-    subtitle: "Modern Interface Recreation",
-    description: "Pixel-perfect recreation of Instagram's user interface showcasing advanced UI/UX design skills and attention to detail.",
-    tech: ["UI/UX", "Frontend", "Responsive Design", "Animation"],
-    link: "https://ik.imagekit.io/Sree/Record_2025-04-27-19-53-55.mp4",
-    type: "UI/UX",
-    color: "cosmic-pink"
+    title: "MindMate",
+    subtitle: "AI-powered mental wellness app",
+    description:
+      "AI-assisted mental wellness app for emotion detection and supportive guidance, built with a user-focused interface to support users.",
+    tech: ["React.js", "Node.js", "AI-assisted UX"],
+    link: "https://github.com/Sreelakshmiag2004/Mind-Mate",
+    code: "https://github.com/Sreelakshmiag2004/Mind-Mate",
+    type: "Web Application",
+    color: "cosmic-purple",
   },
   {
-    title: "BOLLBOT (Ongoing Project)",
-    subtitle: "AI for Cotton Pest Control",
-    description: "Advanced machine learning solution for identifying and controlling cotton pests, helping farmers make data-driven decisions for crop protection.",
-    tech: ["Python", "AI/ML", "Computer Vision", "Data Analysis"],
-    link: "https://tinyurl.com/BOLLBOTPRJ",
-    type: "AI/ML",
-    color: "cosmic-blue"
-  }
+    title: "Sairam MUN Website",
+    subtitle: "Responsive event management platform",
+    description:
+      "Responsive event platform for Sri Sairam Engineering College, streamlining MUN registration and stakeholder information with a robust client-server setup.",
+    tech: ["React.js", "Web", "Registration Flow"],
+    link: "https://github.com/Sreelakshmiag2004/Sairam-mun-website",
+    code: "https://github.com/Sreelakshmiag2004/Sairam-mun-website",
+    type: "Web Application",
+    color: "cosmic-cyan",
+  },
+  {
+    title: "Portfolio",
+    subtitle: "Personal portfolio (live)",
+    description:
+      "High-performance responsive portfolio built with React, Vite, and Tailwind CSS, featuring 3D animations with Three.js / @react-three/fiber.",
+    tech: ["React", "Vite", "Tailwind", "Three.js"],
+    link: "https://sreelakshmi-ag-portfolio.netlify.app/",
+    code: "https://github.com/Sreelakshmiag2004/portfolio",
+    type: "Web",
+    color: "cosmic-pink",
+  },
 ];
 
 // Add logo SVGs for each skill
@@ -210,17 +216,19 @@ const skillLogos: Record<string, JSX.Element> = {
 const skillProficiency: Record<string, string> = {
   Python: 'Advanced',
   Java: 'Advanced',
-  C: 'Intermediate',
-  'HTML/CSS': 'Advanced',
-  JavaScript: 'Advanced',
-  React: 'Advanced',
-  Git: 'Advanced',
-  Linux: 'Proficient',
-  Figma: 'Proficient',
-  'AI/ML': 'Intermediate',
+  TypeScript: 'Proficient',
+  'JavaScript (ES6+)': 'Advanced',
+  'React.js': 'Proficient',
+  'Node.js': 'Proficient',
+  'Figma (UI/UX Prototyping)': 'Proficient',
+  MySQL: 'Proficient',
+  MongoDB: 'Proficient',
+  'Git & GitHub': 'Advanced',
+  'Linux Commands': 'Proficient',
+  'Agile/Scrum': 'Proficient',
 };
 
-// Official SVG logo components for each tech
+// Official SVG/logo components for each tech
 const techLogos: Record<string, JSX.Element> = {
   Python: (
     <img src={pythonLogo} alt="Python Logo" className="w-12 h-12 object-contain" />
@@ -228,29 +236,45 @@ const techLogos: Record<string, JSX.Element> = {
   Java: (
     <img src={javaLogo} alt="Java Logo" className="w-12 h-12 object-contain" />
   ),
-  C: (
-    <span className="text-2xl font-bold text-blue-800">C</span>
+  TypeScript: (
+    <div className="w-12 h-12 rounded-xl bg-[#3178c6] text-white flex items-center justify-center font-bold">
+      TS
+    </div>
   ),
-  'HTML/CSS': (
-    <img src={htmlLogo} alt="HTML/CSS Logo" className="w-12 h-12 object-contain" />
-  ),
-  JavaScript: (
+  'JavaScript (ES6+)': (
     <img src={jsLogo} alt="JavaScript Logo" className="w-12 h-12 object-contain" />
   ),
-  React: (
+  'React.js': (
     <img src={reactLogo} alt="React Logo" className="w-12 h-12 object-contain" />
   ),
-  Git: (
-    <img src={gitLogo} alt="Git Logo" className="w-12 h-12 object-contain" />
+  'Node.js': (
+    <div className="w-12 h-12 rounded-xl bg-[#3c873a] text-white flex items-center justify-center font-bold">
+      Node
+    </div>
   ),
-  Linux: (
-    <img src={linuxLogo} alt="Linux Logo" className="w-12 h-12 object-contain" />
-  ),
-  Figma: (
+  'Figma (UI/UX Prototyping)': (
     <img src={figmaLogo} alt="Figma Logo" className="w-12 h-12 object-contain" />
   ),
-  'AI/ML': (
-    <img src={aiLogo} alt="AI/ML Logo" className="w-12 h-12 object-contain" />
+  MySQL: (
+    <div className="w-12 h-12 rounded-xl bg-[#00758f] text-white flex items-center justify-center font-bold">
+      SQL
+    </div>
+  ),
+  MongoDB: (
+    <div className="w-12 h-12 rounded-xl bg-[#47a248] text-white flex items-center justify-center font-bold">
+      MDB
+    </div>
+  ),
+  'Git & GitHub': (
+    <img src={gitLogo} alt="Git Logo" className="w-12 h-12 object-contain" />
+  ),
+  'Linux Commands': (
+    <img src={linuxLogo} alt="Linux Logo" className="w-12 h-12 object-contain" />
+  ),
+  'Agile/Scrum': (
+    <div className="w-12 h-12 rounded-xl bg-[#a855f7] text-white flex items-center justify-center font-bold">
+      Agile
+    </div>
   ),
 };
 
@@ -375,6 +399,30 @@ export const Skills = () => {
               >
                 Computer Science Student
               </motion.p>
+              <motion.div
+                variants={itemVariants}
+                className="mt-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-sm text-muted-foreground"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Phone size={16} className="text-primary" />
+                  8667087858
+                </span>
+                <span className="hidden md:inline text-muted-foreground/40">•</span>
+                <span className="inline-flex items-center gap-2">
+                  <Mail size={16} className="text-primary" />
+                  <a
+                    className="hover:text-primary transition-colors"
+                    href="mailto:sreelakshmiag2004@gmail.com"
+                  >
+                    sreelakshmiag2004@gmail.com
+                  </a>
+                </span>
+                <span className="hidden md:inline text-muted-foreground/40">•</span>
+                <span className="inline-flex items-center gap-2">
+                  <MapPin size={16} className="text-primary" />
+                  Chennai
+                </span>
+              </motion.div>
             </motion.div>
 
             {/* Tagline */}
@@ -464,7 +512,7 @@ export const Skills = () => {
               About Me
             </h1>
             <p className="text-xl text-muted-foreground">
-              Passionate about creating innovative solutions through technology
+              A quick snapshot of my profile and experience
             </p>
           </motion.div>
 
@@ -482,13 +530,34 @@ export const Skills = () => {
                 whileHover={{ scale: 1.02 }}
                 className="card-cosmic"
               >
+                <h3 className="text-2xl font-bold mb-4 text-gradient">Professional Summary</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Pre-final year Computer Science student with a strong foundation in scalable web development
+                  and a keen interest in enterprise digital transformation. Adept at bridging technical complexities
+                  with business requirements to deliver impactful, user-centric solutions. Proven leader and collaborator,
+                  committed to continuous growth and excellence in large-scale enterprise consultancy environments.
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                className="card-cosmic"
+              >
                 <h3 className="text-2xl font-bold mb-4 text-gradient">Education</h3>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div>
-                    <h4 className="font-semibold text-lg">Computer Science and Engineering</h4>
+                    <h4 className="font-semibold text-lg">B.E. — Computer Science and Engineering</h4>
                     <p className="text-base text-primary font-medium">Sri Sairam Engineering College</p>
-                    <p className="text-sm text-accent">CGPA: 8.85 (till 3rd sem)</p>
+                    <p className="text-sm text-muted-foreground">
+                      Tambaram, India • 2023–2027
+                    </p>
+                    <p className="text-sm text-accent">CGPA: 8.95</p>
                   </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed mt-2">
+                    Actively building a robust foundation in software engineering, data structures, and enterprise
+                    system architectures through hands-on projects and research.
+                  </p>
                 </div>
               </motion.div>
 
@@ -497,20 +566,32 @@ export const Skills = () => {
                 whileHover={{ scale: 1.02 }}
                 className="card-cosmic"
               >
-                <h3 className="text-2xl font-bold mb-4 text-gradient">Passions</h3>
-                <div className="space-y-2">
-                  <p className="text-muted-foreground">
-                    • Building AI-powered solutions for real-world problems
-                  </p>
-                  <p className="text-muted-foreground">
-                    • Mobile application development and user experience
-                  </p>
-                  <p className="text-muted-foreground">
-                    • Web development with modern frameworks
-                  </p>
-                  <p className="text-muted-foreground">
-                    • UI/UX design and creative problem solving
-                  </p>
+                <h3 className="text-2xl font-bold mb-4 text-gradient">Internships</h3>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 className="font-semibold text-lg">Web Development Intern</h4>
+                      <span className="text-sm text-muted-foreground">Dec 2025</span>
+                    </div>
+                    <p className="text-primary font-medium">Neyveli Lignite Corporation India Limited (NLC India Limited)</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mt-1">
+                      Developed a high-availability canteen management system, translating complex organizational
+                      requirements into a streamlined, database-integrated web application that optimized data processing
+                      and order management.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 className="font-semibold text-lg">Mobile UI/UX Designer Intern</h4>
+                      <span className="text-sm text-muted-foreground">Jun 2025 – Jul 2025</span>
+                    </div>
+                    <p className="text-primary font-medium">Vulture Lies Tech Management Pvt Ltd</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mt-1">
+                      Engineered end-to-end UI/UX designs for healthcare applications, focusing on user-centered
+                      design (UCD) methodologies to enhance accessibility and patient engagement.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -522,23 +603,23 @@ export const Skills = () => {
               {[
                 {
                   year: "2025",
-                  title: "Mobile Development",
-                  description: "Created MindMate - A comprehensive mental wellness application with user-centric design"
+                  title: "Enterprise Web Internship",
+                  description: "Built a Canteen Management system during my internship at NLC India Limited"
                 },
                 {
-                  year: "2024",
-                  title: "AI Innovation",
-                  description: "Developed BOLLBOT - AI solution for cotton pest control using advanced machine learning algorithms"
+                  year: "2025",
+                  title: "UI/UX Internship",
+                  description: "Designed healthcare app experiences using UCD methodologies"
                 },
                 {
-                  year: "2023",
-                  title: "Web Development",
-                  description: "Built Women Safety Analytics platform with real-time data processing and visualization"
+                  year: "2025",
+                  title: "Idea Patent Published",
+                  description: "NAVICARRIERE — concept to guide 12th-grade students through personalized academic and job insights"
                 },
                 {
-                  year: "2023",
-                  title: "UI/UX Excellence",
-                  description: "Designed and developed Instagram UI clone showcasing modern interface design principles"
+                  year: "2024–2026",
+                  title: "Leadership & Certifications",
+                  description: "IEEE RS documentation lead; RHCSA certification; Cisco Python Essentials 1 & 2"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -554,6 +635,21 @@ export const Skills = () => {
                   </div>
                 </motion.div>
               ))}
+
+              <motion.div
+                variants={itemVariants}
+                className="card-cosmic"
+              >
+                <h4 className="text-xl font-bold mb-3 text-gradient">Leadership & Certifications</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>
+                    <span className="text-primary font-semibold">Leadership:</span> Leading the Documentation team at IEEE RS to orchestrate the full event reporting lifecycle, ensuring high-quality technical documentation.
+                  </li>
+                  <li>
+                    <span className="text-primary font-semibold">Certifications:</span> RHCSA (RedHat Certified System Administrator); Cisco Python Essentials 1 & 2.
+                  </li>
+                </ul>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -815,7 +911,7 @@ export const Skills = () => {
               </motion.a>
 
               <div className="mt-8 text-sm text-muted-foreground">
-                Last updated: June 2024 • PDF Format • 2 Pages
+                PDF Format • Updated resume available for download
               </div>
             </motion.div>
           </motion.div>
@@ -987,6 +1083,12 @@ export const Skills = () => {
                 <div className="space-y-4">
                   {[
                     {
+                      name: "Phone",
+                      url: "tel:+918667087858",
+                      icon: Phone,
+                      color: "text-primary hover:text-primary/80"
+                    },
+                    {
                       name: "LinkedIn",
                       url: "https://www.linkedin.com/in/sree-lakshmi-a-g-23a867281/",
                       icon: Linkedin,
@@ -1020,7 +1122,11 @@ export const Skills = () => {
                         <div>
                           <div className="font-semibold">{link.name}</div>
                           <div className="text-sm text-muted-foreground">
-                            {link.name === 'Email' ? 'Send me an email' : `Connect on ${link.name}`}
+                            {link.name === 'Email'
+                              ? 'Send me an email'
+                              : link.name === 'Phone'
+                                ? 'Call / WhatsApp'
+                                : `Connect on ${link.name}`}
                           </div>
                         </div>
                       </motion.a>
