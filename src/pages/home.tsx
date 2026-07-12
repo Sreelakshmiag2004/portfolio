@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { Download, ExternalLink, Mail } from 'lucide-react';
@@ -29,7 +30,7 @@ export const Home = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${cosmicBg})`,
@@ -48,7 +49,7 @@ export const Home = () => {
 
       {/* 3D Floating Shapes - with error boundary */}
       <div className="absolute inset-0 z-20 pointer-events-none">
-        <Canvas 
+        <Canvas
           camera={{ position: [0, 0, 5], fov: 50 }}
           onCreated={({ gl }) => {
             gl.setClearColor('#000000', 0);
@@ -69,7 +70,7 @@ export const Home = () => {
         >
           {/* Name and Title */}
           <motion.div variants={itemVariants} className="mb-8">
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-7xl font-bold mb-4"
               whileHover={{ scale: 1.02 }}
             >
@@ -77,7 +78,7 @@ export const Home = () => {
               <br />
               <span className="text-foreground">A G</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl text-muted-foreground mb-2"
               variants={itemVariants}
             >
@@ -86,7 +87,7 @@ export const Home = () => {
           </motion.div>
 
           {/* Tagline */}
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
           >
@@ -96,7 +97,7 @@ export const Home = () => {
           </motion.p>
 
           {/* Action Buttons */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
@@ -112,7 +113,7 @@ export const Home = () => {
             </Link>
 
             <motion.a
-              href="/SreeLakshmiAGResume.pdf"
+              href="/Sree_Resume.pdf"
               download
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -135,7 +136,7 @@ export const Home = () => {
           </motion.div>
 
           {/* Floating Stats */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
           >

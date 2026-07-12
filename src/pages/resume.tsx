@@ -6,7 +6,7 @@ export const Resume = () => {
   return (
     <div className="relative min-h-screen pt-24 px-6">
       <ParticlesBackground />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,9 +20,9 @@ export const Resume = () => {
           <p className="text-xl text-muted-foreground mb-8">
             Download my latest resume or view my qualifications below
           </p>
-          
+
           <motion.a
-            href="/SreeLakshmiAGResume.pdf"
+            href="/Sree_Resume.pdf"
             download
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -175,10 +175,10 @@ export const Resume = () => {
           <div className="card-glass p-8">
             <h3 className="text-2xl font-bold mb-4 text-gradient">Professional Summary</h3>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Passionate computer science student with a strong foundation in programming, 
-              AI/ML technologies, and user-centered design. Experienced in developing 
-              innovative solutions for real-world problems, from agricultural AI to mental 
-              wellness applications. Committed to continuous learning and creating 
+              Passionate computer science student with a strong foundation in programming,
+              AI/ML technologies, and user-centered design. Experienced in developing
+              innovative solutions for real-world problems, from agricultural AI to mental
+              wellness applications. Committed to continuous learning and creating
               technology that makes a positive impact.
             </p>
           </div>

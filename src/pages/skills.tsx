@@ -17,6 +17,7 @@ import reactLogo from '../assets/react.png';
 import gitLogo from '../assets/git.png';
 import linuxLogo from '../assets/linux.png';
 import figmaLogo from '../assets/figma.png';
+import htmlLogo from '../assets/HTML.png';
 
 // Animation variants
 const containerVariants = {
@@ -52,18 +53,28 @@ const sectionVariants = {
 
 // Skills data (aligned to resume)
 const skillsData = [
-  { name: 'Python', level: 90, category: 'Programming', color: '#3776ab' },
-  { name: 'Java', level: 85, category: 'Programming', color: '#f89820' },
-  { name: 'TypeScript', level: 82, category: 'Programming', color: '#3178c6' },
-  { name: 'JavaScript (ES6+)', level: 86, category: 'Programming', color: '#f7df1e' },
-  { name: 'React.js', level: 84, category: 'Web & Enterprise', color: '#61dafb' },
-  { name: 'Node.js', level: 78, category: 'Web & Enterprise', color: '#3c873a' },
-  { name: 'Figma (UI/UX Prototyping)', level: 85, category: 'Web & Enterprise', color: '#f24e1e' },
+  { name: 'Python', level: 90, category: 'Programming Languages', color: '#3776ab' },
+  { name: 'Java', level: 85, category: 'Programming Languages', color: '#f89820' },
+  { name: 'TypeScript', level: 82, category: 'Programming Languages', color: '#3178c6' },
+  { name: 'JavaScript (ES6+)', level: 86, category: 'Programming Languages', color: '#f7df1e' },
+  { name: 'HTML', level: 84, category: 'Web & Frontend Development', color: '#e34f26' },
+  { name: 'CSS', level: 83, category: 'Web & Frontend Development', color: '#264de4' },
+  { name: 'React.js', level: 84, category: 'Web & Frontend Development', color: '#61dafb' },
+  { name: 'Figma', level: 85, category: 'UI/UX & Design', color: '#f24e1e' },
+  { name: 'Canva', level: 80, category: 'UI/UX & Design', color: '#00c4cc' },
+  { name: 'UI-Prototyping', level: 82, category: 'UI/UX & Design', color: '#a855f7' },
   { name: 'MySQL', level: 78, category: 'Database', color: '#00758f' },
   { name: 'MongoDB', level: 76, category: 'Database', color: '#47a248' },
-  { name: 'Git & GitHub', level: 88, category: 'Tools & Platforms', color: '#f05032' },
-  { name: 'Linux Commands', level: 75, category: 'Tools & Platforms', color: '#fcc624' },
+  { name: 'SQLite', level: 74, category: 'Database', color: '#003b57' },
+  { name: 'Git', level: 88, category: 'Tools & Platforms', color: '#f05032' },
+  { name: 'Github', level: 86, category: 'Tools & Platforms', color: '#181717' },
+  { name: 'Linux', level: 75, category: 'Tools & Platforms', color: '#fcc624' },
+  { name: 'PyUnit', level: 72, category: 'Tools & Platforms', color: '#3776ab' },
+  { name: 'Cloud Basics', level: 70, category: 'Tools & Platforms', color: '#38bdf8' },
+  { name: 'Requirements Gathering', level: 80, category: 'Consulting & Soft Skills', color: '#6366f1' },
   { name: 'Agile/Scrum', level: 78, category: 'Consulting & Soft Skills', color: '#a855f7' },
+  { name: 'Technical Documentation', level: 82, category: 'Consulting & Soft Skills', color: '#0ea5e9' },
+  { name: 'Stakeholder Communication', level: 80, category: 'Consulting & Soft Skills', color: '#ec4899' },
 ];
 
 // Projects data (aligned to resume)
@@ -102,14 +113,14 @@ const projects = [
     color: "cosmic-cyan",
   },
   {
-    title: "Portfolio",
-    subtitle: "Personal portfolio (live)",
+    title: "CBI Secure Access System",
+    subtitle: "Python-based Secure Access System",
     description:
-      "High-performance responsive portfolio built with React, Vite, and Tailwind CSS, featuring 3D animations with Three.js / @react-three/fiber.",
-    tech: ["React", "Vite", "Tailwind", "Three.js"],
-    link: "https://sreelakshmi-ag-portfolio.netlify.app/",
-    code: "https://github.com/Sreelakshmiag2004/portfolio",
-    type: "Web",
+      "Built a Python-based secure access system with role-based authentication, secure login, account locking, audit logging, and local storage for confidential records.",
+    tech: ["Python", "Authentication", "Security", "File Handling"],
+    link: "https://github.com/Sreelakshmiag2004/Secure_access_System",
+    code: "https://github.com/Sreelakshmiag2004/Secure_access_System",
+    type: "Web Application",
     color: "cosmic-pink",
   },
 ];
@@ -119,25 +130,25 @@ const skillLogos: Record<string, JSX.Element> = {
   Python: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <path fill="#3776AB" d="M24 8C13.5 8 5 16.5 5 27c0 3.9 1.1 7.5 3 10.7C10.5 37.5 15.5 39 21 39c10.5 0 19-8.5 19-19S31.5 8 24 8zm0 34c-8.3 0-15-6.7-15-15S15.7 7 24 7s15 6.7 15 15-6.7 15-15 15z"/>
-        <path fill="#FFD43B" d="M24 10c-2.5 0-4.5 2-4.5 4.5S21.5 19 24 19s4.5-2 4.5-4.5S26.5 10 24 10z"/>
+        <path fill="#3776AB" d="M24 8C13.5 8 5 16.5 5 27c0 3.9 1.1 7.5 3 10.7C10.5 37.5 15.5 39 21 39c10.5 0 19-8.5 19-19S31.5 8 24 8zm0 34c-8.3 0-15-6.7-15-15S15.7 7 24 7s15 6.7 15 15-6.7 15-15 15z" />
+        <path fill="#FFD43B" d="M24 10c-2.5 0-4.5 2-4.5 4.5S21.5 19 24 19s4.5-2 4.5-4.5S26.5 10 24 10z" />
       </g>
     </svg>
   ),
   Java: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <path fill="#ed8b00" d="M24 28c-3.3 0-6-2.7-6-6h12c0 3.3-2.7 6-6 6z"/>
-        <path fill="#5382a1" d="M24 10c-2.5 0-4.5 2-4.5 4.5S21.5 19 24 19s4.5-2 4.5-4.5S26.5 10 24 10z"/>
-        <ellipse cx="24" cy="14.5" rx="2.5" ry="2.5" fill="#fff"/>
-        <path fill="#ed8b00" d="M24 13c.8 0 1.5.7 1.5 1.5S25.8 16 24 16s-1.5-.7-1.5-1.5S23.2 13 24 13z"/>
+        <path fill="#ed8b00" d="M24 28c-3.3 0-6-2.7-6-6h12c0 3.3-2.7 6-6 6z" />
+        <path fill="#5382a1" d="M24 10c-2.5 0-4.5 2-4.5 4.5S21.5 19 24 19s4.5-2 4.5-4.5S26.5 10 24 10z" />
+        <ellipse cx="24" cy="14.5" rx="2.5" ry="2.5" fill="#fff" />
+        <path fill="#ed8b00" d="M24 13c.8 0 1.5.7 1.5 1.5S25.8 16 24 16s-1.5-.7-1.5-1.5S23.2 13 24 13z" />
       </g>
     </svg>
   ),
   C: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <polygon points="24,8 36,16 36,32 24,40 12,32 12,16" fill="#00599c"/>
+        <polygon points="24,8 36,16 36,32 24,40 12,32 12,16" fill="#00599c" />
         <text x="24" y="28" textAnchor="middle" fontSize="16" fill="#fff" fontFamily="Arial">C</text>
       </g>
     </svg>
@@ -145,8 +156,8 @@ const skillLogos: Record<string, JSX.Element> = {
   'HTML/CSS': (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <polygon points="12,2 36,2 34,28 24,30 16,28" fill="#e34f26"/>
-        <polygon points="24,27 30,25.5 31.5,4 24,4" fill="#ef652a"/>
+        <polygon points="12,2 36,2 34,28 24,30 16,28" fill="#e34f26" />
+        <polygon points="24,27 30,25.5 31.5,4 24,4" fill="#ef652a" />
         <text x="24" y="22" textAnchor="middle" fontSize="8" fill="#fff" fontFamily="Arial">5</text>
       </g>
     </svg>
@@ -154,8 +165,8 @@ const skillLogos: Record<string, JSX.Element> = {
   JavaScript: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <circle cx="24" cy="24" r="20" fill="#f7df1e"/>
-        <rect x="14" y="14" width="20" height="20" rx="4" fill="#f7df1e"/>
+        <circle cx="24" cy="24" r="20" fill="#f7df1e" />
+        <rect x="14" y="14" width="20" height="20" rx="4" fill="#f7df1e" />
         <text x="24" y="28" textAnchor="middle" fontSize="14" fill="#222" fontFamily="Arial">JS</text>
       </g>
     </svg>
@@ -163,50 +174,50 @@ const skillLogos: Record<string, JSX.Element> = {
   React: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <ellipse cx="24" cy="24" rx="10" ry="4" fill="none" stroke="#61dafb" strokeWidth="2"/>
-        <ellipse cx="24" cy="24" rx="4" ry="10" fill="none" stroke="#61dafb" strokeWidth="2" transform="rotate(60 24 24)"/>
-        <ellipse cx="24" cy="24" rx="4" ry="10" fill="none" stroke="#61dafb" strokeWidth="2" transform="rotate(120 24 24)"/>
-        <circle cx="24" cy="24" r="3" fill="#61dafb"/>
+        <ellipse cx="24" cy="24" rx="10" ry="4" fill="none" stroke="#61dafb" strokeWidth="2" />
+        <ellipse cx="24" cy="24" rx="4" ry="10" fill="none" stroke="#61dafb" strokeWidth="2" transform="rotate(60 24 24)" />
+        <ellipse cx="24" cy="24" rx="4" ry="10" fill="none" stroke="#61dafb" strokeWidth="2" transform="rotate(120 24 24)" />
+        <circle cx="24" cy="24" r="3" fill="#61dafb" />
       </g>
     </svg>
   ),
   Git: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <path d="M34.7 18.3l-9-9c-.8-.8-2-.8-2.8 0l-2.2 2.2 2.8 2.8c.7-.2 1.5 0 2 .5.6.6.7 1.4.5 2l2.8 2.8c.7-.2 1.5 0 2 .5.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0-.5-.5-.7-1.2-.5-2l-2.8-2.8c-.7.2-1.5 0-2-.5-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l9 9c.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0z" fill="#f05032"/>
+        <path d="M34.7 18.3l-9-9c-.8-.8-2-.8-2.8 0l-2.2 2.2 2.8 2.8c.7-.2 1.5 0 2 .5.6.6.7 1.4.5 2l2.8 2.8c.7-.2 1.5 0 2 .5.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0-.5-.5-.7-1.2-.5-2l-2.8-2.8c-.7.2-1.5 0-2-.5-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l9 9c.8.8.8 2 0 2.8-.8.8-2 .8-2.8 0z" fill="#f05032" />
       </g>
     </svg>
   ),
   Linux: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <ellipse cx="24" cy="28" rx="8" ry="4" fill="#222"/>
-        <ellipse cx="24" cy="20" rx="7" ry="10" fill="#fff"/>
-        <ellipse cx="20" cy="18" rx="2" ry="3" fill="#222"/>
-        <ellipse cx="28" cy="18" rx="2" ry="3" fill="#222"/>
-        <ellipse cx="24" cy="25" rx="3" ry="2" fill="#ffce00"/>
-        <ellipse cx="21" cy="27" rx="1" ry="1.5" fill="#222"/>
-        <ellipse cx="27" cy="27" rx="1" ry="1.5" fill="#222"/>
+        <ellipse cx="24" cy="28" rx="8" ry="4" fill="#222" />
+        <ellipse cx="24" cy="20" rx="7" ry="10" fill="#fff" />
+        <ellipse cx="20" cy="18" rx="2" ry="3" fill="#222" />
+        <ellipse cx="28" cy="18" rx="2" ry="3" fill="#222" />
+        <ellipse cx="24" cy="25" rx="3" ry="2" fill="#ffce00" />
+        <ellipse cx="21" cy="27" rx="1" ry="1.5" fill="#222" />
+        <ellipse cx="27" cy="27" rx="1" ry="1.5" fill="#222" />
       </g>
     </svg>
   ),
   Figma: (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <circle cx="15" cy="15" r="5" fill="#f24e1e"/>
-        <circle cx="25" cy="15" r="5" fill="#a259ff"/>
-        <circle cx="15" cy="25" r="5" fill="#0acf83"/>
-        <circle cx="25" cy="25" r="5" fill="#1abcfe"/>
-        <circle cx="20" cy="20" r="5" fill="#ff7262"/>
+        <circle cx="15" cy="15" r="5" fill="#f24e1e" />
+        <circle cx="25" cy="15" r="5" fill="#a259ff" />
+        <circle cx="15" cy="25" r="5" fill="#0acf83" />
+        <circle cx="25" cy="25" r="5" fill="#1abcfe" />
+        <circle cx="20" cy="20" r="5" fill="#ff7262" />
       </g>
     </svg>
   ),
   'AI/ML': (
     <svg viewBox="0 0 48 48" width="32" height="32">
       <g>
-        <rect x="12" y="12" width="16" height="16" rx="8" fill="#ff6b6b"/>
-        <circle cx="24" cy="20" r="5" fill="#fff"/>
-        <path d="M24 15v10M15 20h10" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="12" y="12" width="16" height="16" rx="8" fill="#ff6b6b" />
+        <circle cx="24" cy="20" r="5" fill="#fff" />
+        <path d="M24 15v10M15 20h10" stroke="#ff6b6b" strokeWidth="2" strokeLinecap="round" />
       </g>
     </svg>
   ),
@@ -218,14 +229,24 @@ const skillProficiency: Record<string, string> = {
   Java: 'Advanced',
   TypeScript: 'Proficient',
   'JavaScript (ES6+)': 'Advanced',
+  HTML: 'Proficient',
+  CSS: 'Proficient',
   'React.js': 'Proficient',
-  'Node.js': 'Proficient',
-  'Figma (UI/UX Prototyping)': 'Proficient',
+  Figma: 'Proficient',
+  Canva: 'Proficient',
+  'UI-Prototyping': 'Proficient',
   MySQL: 'Proficient',
   MongoDB: 'Proficient',
-  'Git & GitHub': 'Advanced',
-  'Linux Commands': 'Proficient',
+  SQLite: 'Proficient',
+  Git: 'Advanced',
+  Github: 'Proficient',
+  Linux: 'Proficient',
+  PyUnit: 'Proficient',
+  'Cloud Basics': 'Proficient',
+  'Requirements Gathering': 'Proficient',
   'Agile/Scrum': 'Proficient',
+  'Technical Documentation': 'Proficient',
+  'Stakeholder Communication': 'Proficient',
 };
 
 // Official SVG/logo components for each tech
@@ -244,16 +265,29 @@ const techLogos: Record<string, JSX.Element> = {
   'JavaScript (ES6+)': (
     <img src={jsLogo} alt="JavaScript Logo" className="w-12 h-12 object-contain" />
   ),
+  HTML: (
+    <img src={htmlLogo} alt="HTML Logo" className="w-12 h-12 object-contain" />
+  ),
+  CSS: (
+    <div className="w-12 h-12 rounded-xl bg-[#264de4] text-white flex items-center justify-center font-bold">
+      CSS
+    </div>
+  ),
   'React.js': (
     <img src={reactLogo} alt="React Logo" className="w-12 h-12 object-contain" />
   ),
-  'Node.js': (
-    <div className="w-12 h-12 rounded-xl bg-[#3c873a] text-white flex items-center justify-center font-bold">
-      Node
+  Figma: (
+    <img src={figmaLogo} alt="Figma Logo" className="w-12 h-12 object-contain" />
+  ),
+  Canva: (
+    <div className="w-12 h-12 rounded-xl bg-[#00c4cc] text-white flex items-center justify-center font-bold text-sm">
+      Cv
     </div>
   ),
-  'Figma (UI/UX Prototyping)': (
-    <img src={figmaLogo} alt="Figma Logo" className="w-12 h-12 object-contain" />
+  'UI-Prototyping': (
+    <div className="w-12 h-12 rounded-xl bg-[#a855f7] text-white flex items-center justify-center font-bold text-xs">
+      UX
+    </div>
   ),
   MySQL: (
     <div className="w-12 h-12 rounded-xl bg-[#00758f] text-white flex items-center justify-center font-bold">
@@ -265,15 +299,50 @@ const techLogos: Record<string, JSX.Element> = {
       MDB
     </div>
   ),
-  'Git & GitHub': (
+  SQLite: (
+    <div className="w-12 h-12 rounded-xl bg-[#003b57] text-white flex items-center justify-center font-bold text-xs">
+      SQL
+    </div>
+  ),
+  Git: (
     <img src={gitLogo} alt="Git Logo" className="w-12 h-12 object-contain" />
   ),
-  'Linux Commands': (
+  Github: (
+    <div className="w-12 h-12 rounded-xl bg-[#181717] text-white flex items-center justify-center font-bold">
+      GH
+    </div>
+  ),
+  Linux: (
     <img src={linuxLogo} alt="Linux Logo" className="w-12 h-12 object-contain" />
   ),
+  PyUnit: (
+    <div className="w-12 h-12 rounded-xl bg-[#3776ab] text-white flex items-center justify-center font-bold text-xs">
+      PyU
+    </div>
+  ),
+  'Cloud Basics': (
+    <div className="w-12 h-12 rounded-xl bg-[#38bdf8] text-white flex items-center justify-center font-bold text-xs">
+      Cloud
+    </div>
+  ),
+  'Requirements Gathering': (
+    <div className="w-12 h-12 rounded-xl bg-[#6366f1] text-white flex items-center justify-center font-bold text-xs">
+      Req
+    </div>
+  ),
   'Agile/Scrum': (
-    <div className="w-12 h-12 rounded-xl bg-[#a855f7] text-white flex items-center justify-center font-bold">
+    <div className="w-12 h-12 rounded-xl bg-[#a855f7] text-white flex items-center justify-center font-bold text-xs">
       Agile
+    </div>
+  ),
+  'Technical Documentation': (
+    <div className="w-12 h-12 rounded-xl bg-[#0ea5e9] text-white flex items-center justify-center font-bold text-xs">
+      Docs
+    </div>
+  ),
+  'Stakeholder Communication': (
+    <div className="w-12 h-12 rounded-xl bg-[#ec4899] text-white flex items-center justify-center font-bold text-xs">
+      Comm
     </div>
   ),
 };
@@ -281,7 +350,7 @@ const techLogos: Record<string, JSX.Element> = {
 // Skill Orb Component
 const SkillOrb = ({ skill, index }: { skill: typeof skillsData[0]; index: number }) => {
   const ref = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (ref.current) {
       ref.current.rotation.x = Math.sin(state.clock.elapsedTime + index) * 0.2;
@@ -291,17 +360,17 @@ const SkillOrb = ({ skill, index }: { skill: typeof skillsData[0]; index: number
   });
 
   return (
-    <mesh 
-      ref={ref} 
+    <mesh
+      ref={ref}
       position={[
-        (index % 5 - 2) * 2, 
-        Math.floor(index / 5) * 2 - 1, 
+        (index % 5 - 2) * 2,
+        Math.floor(index / 5) * 2 - 1,
         0
       ]}
     >
       <sphereGeometry args={[0.5, 16, 16]} />
-      <meshStandardMaterial 
-        color={skill.color} 
+      <meshStandardMaterial
+        color={skill.color}
         emissive={skill.color}
         emissiveIntensity={0.2}
         transparent
@@ -350,7 +419,7 @@ export const Skills = () => {
       {/* HOME SECTION */}
       <section id="home" className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${cosmicBg})`,
@@ -364,7 +433,7 @@ export const Skills = () => {
 
         {/* 3D Floating Shapes */}
         <div className="absolute inset-0 z-10 pointer-events-none">
-          <Canvas 
+          <Canvas
             camera={{ position: [0, 0, 5], fov: 50 }}
             onCreated={({ gl }) => {
               gl.setClearColor('#000000', 0);
@@ -385,7 +454,7 @@ export const Skills = () => {
           >
             {/* Name and Title */}
             <motion.div variants={itemVariants} className="mb-8">
-              <motion.h1 
+              <motion.h1
                 className="text-5xl md:text-7xl font-bold mb-4"
                 whileHover={{ scale: 1.02 }}
               >
@@ -393,7 +462,7 @@ export const Skills = () => {
                 <br />
                 <span className="text-foreground">A G</span>
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl md:text-2xl text-muted-foreground mb-2"
                 variants={itemVariants}
               >
@@ -426,7 +495,7 @@ export const Skills = () => {
             </motion.div>
 
             {/* Tagline */}
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
             >
@@ -436,7 +505,7 @@ export const Skills = () => {
             </motion.p>
 
             {/* Action Buttons */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
@@ -451,7 +520,7 @@ export const Skills = () => {
               </motion.button>
 
               <motion.a
-                href="/SreeLakshmiAGResume.pdf"
+                href="/Sree_Resume.pdf"
                 download
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -473,7 +542,7 @@ export const Skills = () => {
             </motion.div>
 
             {/* Floating Stats */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
@@ -552,7 +621,7 @@ export const Skills = () => {
                     <p className="text-sm text-muted-foreground">
                       Tambaram, India • 2023–2027
                     </p>
-                    <p className="text-sm text-accent">CGPA: 8.95</p>
+                    <p className="text-sm text-accent">CGPA: 9.11</p>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed mt-2">
                     Actively building a robust foundation in software engineering, data structures, and enterprise
@@ -599,7 +668,7 @@ export const Skills = () => {
             {/* Timeline */}
             <div className="space-y-8">
               <h3 className="text-2xl font-bold text-gradient">Journey</h3>
-              
+
               {[
                 {
                   year: "2025",
@@ -675,49 +744,49 @@ export const Skills = () => {
 
           {/* Skills Grid */}
           <TooltipProvider>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
-          >
-            {skillsData.map((skill, index) => (
-              <Tooltip key={skill.name}>
-                <TooltipTrigger asChild>
-                  <motion.div
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="card-cosmic text-center group cursor-pointer transition-shadow"
-                  >
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-white shadow-glow transition-all duration-300 group-hover:shadow-glow-intense">
-                      {techLogos[skill.name]}
-                    </div>
-                    <h3 className="font-semibold mb-2">{skill.name}</h3>
-                    {/* New attractive skill bar */}
-                    <div className="w-full cosmic-skill-bar mb-3">
-                      <motion.div
-                        className="cosmic-skill-bar-fill"
-                        style={{ width: `${skill.level}%` }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 1 }}
-                      >
-                        <span className="cosmic-skill-bar-label">{skill.level}%</span>
-                      </motion.div>
-                    </div>
-                    <p className="text-xs text-muted-foreground">{skill.category}</p>
-                    {/* Glow overlay for unified effect */}
-                    <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 cosmic-glow-hover"></div>
-                  </motion.div>
-                </TooltipTrigger>
-                <TooltipContent side="top">
-                  <span className="font-semibold">Proficiency:</span> {skillProficiency[skill.name]}
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={sectionVariants}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+            >
+              {skillsData.map((skill, index) => (
+                <Tooltip key={skill.name}>
+                  <TooltipTrigger asChild>
+                    <motion.div
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="card-cosmic text-center group cursor-pointer transition-shadow"
+                    >
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-white shadow-glow transition-all duration-300 group-hover:shadow-glow-intense">
+                        {techLogos[skill.name]}
+                      </div>
+                      <h3 className="font-semibold mb-2">{skill.name}</h3>
+                      {/* New attractive skill bar */}
+                      <div className="w-full cosmic-skill-bar mb-3">
+                        <motion.div
+                          className="cosmic-skill-bar-fill"
+                          style={{ width: `${skill.level}%` }}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1, duration: 1 }}
+                        >
+                          <span className="cosmic-skill-bar-label">{skill.level}%</span>
+                        </motion.div>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{skill.category}</p>
+                      {/* Glow overlay for unified effect */}
+                      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 cosmic-glow-hover"></div>
+                    </motion.div>
+                  </TooltipTrigger>
+                  <TooltipContent side="top">
+                    <span className="font-semibold">Proficiency:</span> {skillProficiency[skill.name]}
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </motion.div>
           </TooltipProvider>
         </div>
       </section>
@@ -750,7 +819,7 @@ export const Skills = () => {
           >
             {projects.map((project, index) => {
               const isVideo = project.link.includes('.mp4');
-              
+
               return (
                 <motion.div
                   key={index}
@@ -805,7 +874,7 @@ export const Skills = () => {
                         {isVideo ? <Play size={16} /> : <ExternalLink size={16} />}
                         {isVideo ? 'Watch Demo' : 'View Project'}
                       </motion.a>
-                      
+
                       {project.title.startsWith('BOLLBOT') ? null : (
                         project.code ? (
                           <motion.a
@@ -900,7 +969,7 @@ export const Skills = () => {
               </div>
 
               <motion.a
-                href="/SreeLakshmiAGResume.pdf"
+                href="/Sree_Resume.pdf"
                 download
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -949,7 +1018,7 @@ export const Skills = () => {
               className="card-cosmic"
             >
               <h3 className="text-2xl font-bold mb-6 text-gradient">Send a Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="relative">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">

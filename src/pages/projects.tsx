@@ -31,19 +31,20 @@ const projects = [
     color: "cosmic-cyan"
   },
   {
-    title: "Instagram UI Clone",
-    subtitle: "Modern Interface Recreation",
-    description: "Pixel-perfect recreation of Instagram's user interface showcasing advanced UI/UX design skills and attention to detail.",
-    tech: ["UI/UX", "Frontend", "Responsive Design", "Animation"],
-    link: "https://ik.imagekit.io/Sree/Record_2025-04-27-19-53-55.mp4",
-    type: "UI/UX",
+    title: "CBI Secure Access System",
+    subtitle: "Python-based Secure Access & Role-Based Authentication System",
+    description: "Developed a secure access management system that provides role-based authentication for Admin and Officer users. The application features secure login, account locking after failed login attempts, admin-controlled account unlocking, audit logging, and local file-based data storage to ensure secure management of confidential case records.",
+    tech: ["Python", "Authentication", "Security", "File Handling"],
+    link: "https://github.com/Sreelakshmiag2004/Secure_access_System",
+    github: "https://github.com/Sreelakshmiag2004/Secure_access_System",
+    type: "Web Application",
     color: "cosmic-pink"
   }
 ];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   const isVideo = project.link.includes('.mp4');
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -99,15 +100,18 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
             {isVideo ? <Play size={16} /> : <ExternalLink size={16} />}
             {isVideo ? 'Watch Demo' : 'View Project'}
           </motion.a>
-          
-          <motion.button
+
+          <motion.a
+            href={project.github || project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-ghost flex items-center gap-2"
           >
             <Github size={16} />
             Code
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 
@@ -121,7 +125,7 @@ export const Projects = () => {
   return (
     <div className="relative min-h-screen pt-24 px-6">
       <ParticlesBackground />
-      
+
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
